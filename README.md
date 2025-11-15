@@ -50,6 +50,10 @@ Para replicar la simulación y el benchmark:
 
 ---
 
+'''
+hola
+'''
+
 ##  Resultados Clave (Benchmark)
 
 La simulación demuestra que la **Escoria de Cobre** y la **Magnetita** poseen el mejor rendimiento de almacenamiento volumétrico, superando a las rocas geológicas más comunes (Basalto, Granito), validando una **alternativa de alto impacto** para la industria nacional.
