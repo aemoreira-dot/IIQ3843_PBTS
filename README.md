@@ -12,16 +12,19 @@ En Chile, la mayoría de medios para TES son **importados** (p. ej., alúmina). 
 ## Modelo Matemático Implementado
 
 El sistema PBTS se modela mediante el Modelo 1-D (Axial) No Estacionario de Dos Fases, que considera un balance de energía separado para el fluido (HTF) y el material sólido.
+La **alúmina** se utiliza como **material de referencia**, y cada material se compara bajo condiciones idénticas.
 
 ### 1. Ecuaciones del Balance de Energía
 
 El modelo resuelve la transferencia de calor a lo largo de la dimensión axial ($z$) y el tiempo ($t$), acoplando ambas fases mediante el término convectivo $h_v(T_s - T_f)$.
 
 Balance de Energía en el Fluido ($T_f$):
+El fluido (agua) intercambia calor con las partículas, fluye por convección y presenta difusión/dispersion axial.  
 
 $$\varepsilon \rho_f C_{p,f} \frac{\partial T_f}{\partial t} + \rho_f C_{p,f} u_f \frac{\partial T_f}{\partial z} = h_v (T_s - T_f)$$
 
 Balance de Energía en el Sólido ($T_s$):
+El sólido se modela con conducción radial transitoria:
 
 $$(1 - \varepsilon) \rho_s C_{p,s} \frac{\partial T_s}{\partial t} = h_v (T_f - T_s)$$
 
@@ -30,33 +33,8 @@ Donde:
 * $\rho, C_p$: Densidad y calor específico.
 * $u_f$: Velocidad del fluido.
 * $h_v$: Coeficiente de transferencia de calor volumétrico (el término de acoplamiento).
-#### 📐 3. Ecuaciones de Balance de Energía
 
-Este proyecto simula el comportamiento térmico de un tanque TES de **lecho empacado** mediante la solución acoplada de las ecuaciones de energía del **fluido** y del **sólido**, usando *OpenTerrace*.  
-La **alúmina** se utiliza como **material de referencia**, y cada material se compara bajo condiciones idénticas.
 
----
-
-### 🔥 3.1. Balance de energía del fluido (dirección axial *z*)
-
-El fluido (agua) intercambia calor con las partículas, fluye por convección y presenta difusión/dispersion axial.  
-
-\[
-\varepsilon \,\rho_f c_{p,f}\,\frac{\partial T_f}{\partial t}
-+\varepsilon \,\rho_f c_{p,f}\,u\,\frac{\partial T_f}{\partial z}
-=
-\frac{\partial}{\partial z}\left( k_{\mathrm{ax}} \frac{\partial T_f}{\partial z} \right)
-- a_s\, h \left(T_f - T_s^{\mathrm{surf}}\right)
-\]
-
-**Donde:**
-
-- \(\varepsilon\): porosidad del lecho.  
-- \(u\): velocidad superficial del fluido.  
-- \(k_{\mathrm{ax}}\): conductividad/dispersion axial efectiva.  
-- \(a_s\): área específica sólido–fluido por volumen.  
-- \(h\): coeficiente convectivo fluido–sólido.  
-- \(T_s^{\mathrm{surf}}\): temperatura de la superficie de la partícula sólida.
 
 **Condiciones de borde:**
 
@@ -73,17 +51,6 @@ T_f(z,0)=20^\circ\mathrm{C}
 
 ---
 
-### 🪨 3.2. Balance de energía del sólido (partícula esférica hueca)
-
-El sólido se modela con conducción radial transitoria:
-
-\[
-\rho_s c_{p,s}\,\frac{\partial T_s}{\partial t}
-=
-\frac{1}{r^2}
-\frac{\partial}{\partial r}
-\left( k_s r^2 \frac{\partial T_s}{\partial r} \right)
-\]
 
 **Condiciones de borde:**
 
@@ -119,20 +86,6 @@ Este flujo se resta en la ecuación del fluido (pierde calor) y se suma en la de
 
 ---
 
-### 🧮 3.4. Métodos numéricos utilizados
-
-Los esquemas definidos en el código son:
-
-- **Convección (fluido):** upwind 1D  
-- **Difusión (fluido y sólido):** diferencia central 1D  
-- **Avance temporal:** integración explícita con paso  
-  \[
-  \Delta t = 0.05\ \mathrm{s}
-  \]
-
-OpenTerrace gestiona la malla espacial y el ensamblaje de los sistemas para ambas fases, asegurando estabilidad mediante restricciones tipo CFL/Fourier.
-
----
 
 
 ### 2. Puntos Clave del código
