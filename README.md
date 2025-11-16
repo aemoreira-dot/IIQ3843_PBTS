@@ -36,56 +36,6 @@ Donde:
 
 
 
-**Condiciones de borde:**
-
-\[
-T_f(0,t)=80^\circ\mathrm{C}, \qquad 
-\frac{\partial T_f}{\partial z}(H,t)=0
-\]
-
-**Condición inicial:**
-
-\[
-T_f(z,0)=20^\circ\mathrm{C}
-\]
-
----
-
-
-**Condiciones de borde:**
-
-- **Radio interno (aislado):**  
-  \[
-  \left.\frac{\partial T_s}{\partial r}\right|_{r=R_{\mathrm{in}}}=0
-  \]
-
-- **Superficie externa (interfaz fluido–sólido):**  
-  \[
-  -k_s 
-  \left.\frac{\partial T_s}{\partial r}\right|_{r=R_{\mathrm{out}}}
-  =
-  h \left(T_s(R_{\mathrm{out}},t) - T_f(z,t)\right)
-  \]
-
-**Condición inicial:**  
-\[
-T_s(r,0)=20^\circ\mathrm{C}
-\]
-
----
-
-### 🔗 3.3. Acoplamiento fluido–sólido
-
-El intercambio de calor en la interfaz está dado por:
-
-\[
-q'' = h\,(T_f - T_s^{\mathrm{surf}})
-\]
-
-Este flujo se resta en la ecuación del fluido (pierde calor) y se suma en la del sólido (gana calor).
-
----
-
 
 
 ### 2. Puntos Clave del código
