@@ -8,6 +8,24 @@ Este proyecto consiste en la modificación y expansión de un código de simulac
 El objetivo es generar un Benchmark Comparativo que permita la toma de decisiones informada para el diseño de sistemas de Almacenamiento Térmico en Lecho Empacado (PBTS), contribuyendo a la cadena de valor local y a la descarbonización industrial en Chile.
 
 En Chile, la mayoría de medios para TES son **importados** (p. ej., alúmina). Este proyecto crea una **metodología reproducible** para comparar **materiales locales** (granito, basalto, escoria de cobre, etc.)
+## Importancia de buscar alternativas a la alúmina como medio de almacenamiento térmico
+
+Actualmente, la alúmina (Al₂O₃) es uno de los materiales más utilizados en sistemas de almacenamiento térmico sensible (TES), presentando problemas críticos a nivel internacional y especialmente para Chile  que no produce alúmina
+
+**Volumen global:**  
+El mercado industrial de alúmina supera los **130 millones de toneladas anuales** (USGS, Alumina & Bauxite Statistics).  
+Una fracción significativa se destina a cerámicos y materiales refractarios**, los mismos que usa la industria TES.
+
+**Para aplicaciones de TES:**  
+Un solo tanque de lecho empacado de tamaño industrial (≈ 50–200 MWh térmicos) requiere típicamente:
+
+- **200 a 2.000 toneladas de alúmina**, dependiendo de la geometría y temperatura de operación.
+
+Esto significa que proyectos termosolares en Chile dependen completamente de **importar cientos de toneladas** de material.
+
+---
+
+
 
 ## Modelo Matemático Implementado
 
