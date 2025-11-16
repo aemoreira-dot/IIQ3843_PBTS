@@ -3,9 +3,11 @@
 
 ## Propósito del Proyecto
 
-Este proyecto consiste en la Modificación y Expansión de un código de simulación de calor sensible (*open-source* basado en OpenTerrace) para evaluar el rendimiento de 10 materiales granulares, priorizando alternativas chilenas de bajo costo y alto impacto (ej. Escoria de Cobre, Basalto).
+Este proyecto consiste en la modificación y expansión de un código de simulación de calor sensible (*open-source* basado en OpenTerrace) para evaluar el rendimiento de 10 materiales granulares, priorizando alternativas chilenas de bajo costo y alto impacto (ej. Escoria de Cobre, Basalto).
 
 El objetivo es generar un Benchmark Comparativo que permita la toma de decisiones informada para el diseño de sistemas de Almacenamiento Térmico en Lecho Empacado (PBTS), contribuyendo a la cadena de valor local y a la descarbonización industrial en Chile.
+
+En Chile, la mayoría de medios para TES son **importados** (p. ej., alúmina). Este proyecto crea una **metodología reproducible** para comparar **materiales locales** (granito, basalto, escoria de cobre, etc.)
 
 ## Modelo Matemático Implementado
 
@@ -28,6 +30,110 @@ Donde:
 * $\rho, C_p$: Densidad y calor específico.
 * $u_f$: Velocidad del fluido.
 * $h_v$: Coeficiente de transferencia de calor volumétrico (el término de acoplamiento).
+#### 📐 3. Ecuaciones de Balance de Energía
+
+Este proyecto simula el comportamiento térmico de un tanque TES de **lecho empacado** mediante la solución acoplada de las ecuaciones de energía del **fluido** y del **sólido**, usando *OpenTerrace*.  
+La **alúmina** se utiliza como **material de referencia**, y cada material se compara bajo condiciones idénticas.
+
+---
+
+### 🔥 3.1. Balance de energía del fluido (dirección axial *z*)
+
+El fluido (agua) intercambia calor con las partículas, fluye por convección y presenta difusión/dispersion axial.  
+
+\[
+\varepsilon \,\rho_f c_{p,f}\,\frac{\partial T_f}{\partial t}
++\varepsilon \,\rho_f c_{p,f}\,u\,\frac{\partial T_f}{\partial z}
+=
+\frac{\partial}{\partial z}\left( k_{\mathrm{ax}} \frac{\partial T_f}{\partial z} \right)
+- a_s\, h \left(T_f - T_s^{\mathrm{surf}}\right)
+\]
+
+**Donde:**
+
+- \(\varepsilon\): porosidad del lecho.  
+- \(u\): velocidad superficial del fluido.  
+- \(k_{\mathrm{ax}}\): conductividad/dispersion axial efectiva.  
+- \(a_s\): área específica sólido–fluido por volumen.  
+- \(h\): coeficiente convectivo fluido–sólido.  
+- \(T_s^{\mathrm{surf}}\): temperatura de la superficie de la partícula sólida.
+
+**Condiciones de borde:**
+
+\[
+T_f(0,t)=80^\circ\mathrm{C}, \qquad 
+\frac{\partial T_f}{\partial z}(H,t)=0
+\]
+
+**Condición inicial:**
+
+\[
+T_f(z,0)=20^\circ\mathrm{C}
+\]
+
+---
+
+### 🪨 3.2. Balance de energía del sólido (partícula esférica hueca)
+
+El sólido se modela con conducción radial transitoria:
+
+\[
+\rho_s c_{p,s}\,\frac{\partial T_s}{\partial t}
+=
+\frac{1}{r^2}
+\frac{\partial}{\partial r}
+\left( k_s r^2 \frac{\partial T_s}{\partial r} \right)
+\]
+
+**Condiciones de borde:**
+
+- **Radio interno (aislado):**  
+  \[
+  \left.\frac{\partial T_s}{\partial r}\right|_{r=R_{\mathrm{in}}}=0
+  \]
+
+- **Superficie externa (interfaz fluido–sólido):**  
+  \[
+  -k_s 
+  \left.\frac{\partial T_s}{\partial r}\right|_{r=R_{\mathrm{out}}}
+  =
+  h \left(T_s(R_{\mathrm{out}},t) - T_f(z,t)\right)
+  \]
+
+**Condición inicial:**  
+\[
+T_s(r,0)=20^\circ\mathrm{C}
+\]
+
+---
+
+### 🔗 3.3. Acoplamiento fluido–sólido
+
+El intercambio de calor en la interfaz está dado por:
+
+\[
+q'' = h\,(T_f - T_s^{\mathrm{surf}})
+\]
+
+Este flujo se resta en la ecuación del fluido (pierde calor) y se suma en la del sólido (gana calor).
+
+---
+
+### 🧮 3.4. Métodos numéricos utilizados
+
+Los esquemas definidos en el código son:
+
+- **Convección (fluido):** upwind 1D  
+- **Difusión (fluido y sólido):** diferencia central 1D  
+- **Avance temporal:** integración explícita con paso  
+  \[
+  \Delta t = 0.05\ \mathrm{s}
+  \]
+
+OpenTerrace gestiona la malla espacial y el ensamblaje de los sistemas para ambas fases, asegurando estabilidad mediante restricciones tipo CFL/Fourier.
+
+---
+
 
 ### 2. Puntos Clave del código
 
