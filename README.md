@@ -43,7 +43,7 @@ Donde:
 * $h_v$: Coeficiente de transferencia de calor volumétrico (el término de acoplamiento).
   
 ## Geometría del tanque 
-Según pelay: 
+Basado en las dimensiones de [Zanganeh](https://www.sciencedirect.com/science/article/pii/S0038092X12002812), a escala de planta piloto:
 * Altura : 3m 
 * Diametro del tanque : 0.03m
 * Porosidad: 0.4 kg/s
