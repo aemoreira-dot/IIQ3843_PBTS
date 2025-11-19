@@ -64,7 +64,7 @@ Para replicar la simulación y el benchmark:
 1.  **Clonar el Repositorio:** `git clone https://docs.github.com/es/repositories/creating-and-managing-repositories/quickstart-for-repositories`
 2.  **Crear Entorno Virtual:** `python -m venv .venv`
 3.  **Activar Entorno:** `.\.venv\Scripts\activate`
-4.  **Instalar Dependencias:** `pip install  openterrace.txt`, `pip install  matplotlib.pyplot.txt`, `pip install  numpy.txt`
+4.  **Instalar Dependencias:** `pip install  openterrace.txt`, `pip install  matplotlib.pyplot.txt`, `pip install  numpy.txt`,`pip install  os.txt`,`pip install  pickle.txt`,`pip install  pathlib.txt`.
 5.  **Ejecutar Simulaciones:** Ejecutar los 10 scripts de simulación individuales (ej. `python simular_alumina.py`). Esto generará los archivos `.pkl` en la carpeta `resultados/`. 
 6.  **Generar Benchmark:** `python benchmark_desde_pkls.py`
 
