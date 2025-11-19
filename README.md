@@ -11,9 +11,9 @@ El objetivo es generar un Benchmark Comparativo que permita la toma de decisione
 ## Importancia de buscar alternativas a la alúmina como medio de almacenamiento térmico
 
 El norte de Chile posee uno de los niveles mas altos de irradiancia solar (2800-300kWh/m^2*año) [World Bank Group & ESMAP. (2023)](https://globalsolaratlas.info/map?c=-21.542511,-69.620361,8&s=-20.463043,-69.422607&m=site), lo cual hace esta tecnologías de almacenamiento térmico fundamentales para la estabilidad,
-Actualmente para estos sistemas, la alúmina (Al₂O₃) sigue siendo uno de los materiales más utilizados en sistemas de almacenamiento térmico sensible (TES), presentando problemas críticos a nivel internacional y especialmente para Chile que no produce alúmina, el mercado industrial de alúmina supera los 130 millones de toneladas anuales (USGS, Alumina & Bauxite Statistics).  
+Actualmente para estos sistemas, la alúmina (Al₂O₃) sigue siendo uno de los materiales más utilizados en sistemas de almacenamiento térmico sensible (TES), presentando problemas críticos a nivel internacional y especialmente para Chile que no produce alúmina, Chile importa entre 30.000 y 40.000 toneladas anuales [Importación alumina](https://comtradeplus.un.org/) 
 
-Esto significa que proyectos termosolares en Chile dependen completamente de **importar cientos de toneladas** de material.
+Esto significa que proyectos en Chile dependen completamente de **importar cientos de toneladas** de material.
 
 ---
 
