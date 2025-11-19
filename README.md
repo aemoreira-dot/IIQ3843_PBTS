@@ -44,9 +44,10 @@ Donde:
   
 ## Geometría del tanque 
 Según pelay: 
-* Diametro del tanque : 3m
-* Porosidad: 0.4m
-* Diametro particula: 0.05
+* Altura : 3m 
+* Diametro del tanque : 0.03m
+* Porosidad: 0.4 kg/s
+* Diametro particula: 0.05m
 
 
 ### 2. Puntos Clave del código
@@ -64,7 +65,7 @@ Para replicar la simulación y el benchmark:
 2.  **Crear Entorno Virtual:** `python -m venv .venv`
 3.  **Activar Entorno:** `.\.venv\Scripts\activate`
 4.  **Instalar Dependencias:** `pip install  openterrace.txt`
-5.  **Ejecutar Simulaciones:** Ejecutar los 10 scripts de simulación individuales (ej. `python simular_alumina.py`). Esto generará los archivos `.pkl` en la carpeta `resultados/`.
+5.  **Ejecutar Simulaciones:** Ejecutar los 10 scripts de simulación individuales (ej. `python simular_alumina.py`). Esto generará los archivos `.pkl` en la carpeta `resultados/`. 
 6.  **Generar Benchmark:** `python benchmark_desde_pkls.py`
 
 ---
