@@ -27,12 +27,12 @@ La alúmina se utiliza como material de referencia, y cada material se compara b
 El modelo resuelve la transferencia de calor a lo largo de la dimensión axial ($z$) y el tiempo ($t$), acoplando ambas fases mediante el término convectivo $h_v(T_s - T_f)$.
 
 Balance de Energía en el Fluido ($T_f$):
-El fluido (agua) intercambia calor con las partículas, fluye por convección y presenta difusión/dispersion axial.  
+El fluido (HTF) fluye por convección e intercambia calor con las partículas sólidas.Utilizando la ecuación en donde se ignora la conducción axial  
 
 $$\varepsilon \rho_f C_{p,f} \frac{\partial T_f}{\partial t} + \rho_f C_{p,f} u_f \frac{\partial T_f}{\partial z} = h_v (T_s - T_f)$$
 
 Balance de Energía en el Sólido ($T_s$):
-El sólido se modela con conducción radial transitoria:
+El sólido se modela con conducción radial transitoria Esta ecuación representa el Modelo Lumped (Agrupado), donde se desprecia la variación de temperatura dentro de la partícula, siendo consistente con la configuración del benchmark (n_other=1).:
 
 $$(1 - \varepsilon) \rho_s C_{p,s} \frac{\partial T_s}{\partial t} = h_v (T_f - T_s)$$
 
