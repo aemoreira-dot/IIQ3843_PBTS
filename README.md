@@ -4,13 +4,13 @@
 ## Propósito del Proyecto
 El almacenamiento térmico sensible (TES) en lechos empacados es una tecnología ampliamente usada en aplicaciones solares e industriales, este sistema consiste en un fluido caliente (como aire o agua ) que circula a través de un tanque cílindrico relleno de particulas sólidas transfiriendo calor por convección externa e interna por conducción dentro del sólido que almacenan energía térmica por cambio de temperatura.
 
-Este proyecto consiste en la modificación y expansión de un código de simulación de calor sensible (*open-source* basado en OpenTerrace) para evaluar el rendimiento de 10 materiales granulares, priorizando alternativas chilenas de bajo costo y alto impacto, despues de un exhaustiva revision realizada por [Georgousis, 2025](https://www.sciencedirect.com/science/article/pii/S2352152X25012290), escogiendo finalmente los 10 mejores materiales sólidos y con mayor impacto en Chile: Escoria de Cobre, Basalto, Diorita, Residuos de Demolición, Gabro, Granito, Magnetita, Basalto y la Caliza) 
+Este proyecto consiste en la modificación y expansión de un código de simulación de calor sensible (*open-source* basado en OpenTerrace) para evaluar el rendimiento de 10 materiales granulares, priorizando alternativas chilenas de bajo costo y alto impacto, despues de un exhaustiva revision realizada por [Georgousis, 2025](https://www.sciencedirect.com/science/article/pii/S2352152X25012290), escogiendo finalmente los 10 mejores materiales sólidos y con mayor impacto en Chile: Escoria de Cobre, Basalto, Diorita, Residuos de Demolición, Gabro, Granito, Magnetita, Basalto y la Caliza.
 
 El objetivo es generar un Benchmark Comparativo que permita la toma de decisiones informada para el diseño de sistemas de Almacenamiento Térmico en Lecho Empacado (PBTS), contribuyendo a la cadena de valor local y a la descarbonización industrial en Chile.El principal problema que se esta enfrentando en Chile la mayoría de medios para TES son importados, siendo la principal la Alúmina.
 
 ## Importancia de buscar alternativas a la alúmina como medio de almacenamiento térmico
 
-El norte de Chile posee uno de los niveles mas altos de irradiancia solar (2800-300kWh/m^2*año), lo cuall hace esta tecnologías de almacenamiento térmico fundamentales para la estabilidad,
+El norte de Chile posee uno de los niveles mas altos de irradiancia solar (2800-300kWh/m^2*año)[](https://globalsolaratlas.info/map?c=-21.542511,-69.620361,8&s=-20.463043,-69.422607&m=site), lo cuall hace esta tecnologías de almacenamiento térmico fundamentales para la estabilidad,
 Actualmente para estos sistemas , la alúmina (Al₂O₃) es uno de los materiales más utilizados en sistemas de almacenamiento térmico sensible (TES), presentando problemas críticos a nivel internacional y especialmente para Chile que no produce alúmina, el mercado industrial de alúmina supera los 130 millones de toneladas anuales (USGS, Alumina & Bauxite Statistics).  
 
 Esto significa que proyectos termosolares en Chile dependen completamente de **importar cientos de toneladas** de material.
