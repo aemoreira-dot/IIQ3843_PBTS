@@ -73,13 +73,15 @@ Para replicar la simulación y el benchmark:
 
 
 ##  Resultados Clave (Benchmark)
-### Figura 1: Curva de Salida (Benchmark T de Salida vs Tiempo)
+### Figura 1: Perfil axial vs Tiempo 
 
 <img width="614" height="461" alt="image" src="https://github.com/user-attachments/assets/a8af19ed-9cb0-4da3-ada6-0456fb1474e4" />
 
 **Fuente:** Elaboración Propia a partir de la simulación del Modelo 1-D (Axial) implementado en OpenTerrace.
+### Figura 2: Curva de Salida (Benchmark T de Salida vs Tiempo)
 
 <img width="614" height="461" alt="image" src="https://github.com/user-attachments/assets/c0d45929-80fc-4745-ae3d-6bd8cd816efb" />
+**Fuente:** Elaboración Propia a partir de la simulación del Modelo 1-D (Axial) implementado en OpenTerrace.
 
 
 La simulación demuestra que la Escoria de Cobre y la Magnetita poseen el mejor rendimiento de almacenamiento volumétrico, superando a las rocas geológicas más comunes (Basalto, Granito), validando una alternativa de alto impacto para la industria nacional.
