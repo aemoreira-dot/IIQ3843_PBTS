@@ -32,7 +32,7 @@ El fluido (HTF) fluye por convección e intercambia calor con las partículas s�
 $$\varepsilon \rho_f C_{p,f} \frac{\partial T_f}{\partial t} + \rho_f C_{p,f} u_f \frac{\partial T_f}{\partial z} = h_v (T_s - T_f)$$
 
 Balance de Energía en el Sólido ($T_s$):
-El sólido se modela con conducción radial transitoria Esta ecuación representa el Modelo Lumped (Agrupado), donde se desprecia la variación de temperatura dentro de la partícula, siendo consistente con la configuración del benchmark (n_other=1).:
+El sólido se modela con conducción radial transitoria Esta ecuación representa el Modelo Lumped (Agrupado), donde se desprecia la variación de temperatura dentro de la partícula, siendo consistente con la configuración del benchmark (`n_other=1`).:
 
 $$(1 - \varepsilon) \rho_s C_{p,s} \frac{\partial T_s}{\partial t} = h_v (T_f - T_s)$$
 
